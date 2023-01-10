@@ -1,2 +1,5 @@
 # java-fundamentals
-initial
+
+Lab 1:
+
+Reference help from akkaben 
