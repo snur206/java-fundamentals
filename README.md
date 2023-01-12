@@ -7,3 +7,7 @@ Reference help from akkaben
 ## Lab 2:
 
 Added a test and method for roll dice and for the contains duplicates
+
+## Lab 3:
+
+Worked the first two feature tasks using HashSet to collect the unique temp items, iterate from min to max temp, and create string that has any temp not seen during the month. Created a tally function for list of strings for votes and returns one string of the most votes.
