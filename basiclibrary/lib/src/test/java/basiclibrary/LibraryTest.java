@@ -6,6 +6,7 @@ import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+
 class LibraryTest {
     @Test void someLibraryMethodReturnsTrue() {
         Library classUnderTest = new Library();
@@ -13,12 +14,61 @@ class LibraryTest {
     }
 
     @Test void rollTest() {
-        Library sut = new Library();
-        System.out.println("Dice rolls: " + Arrays.toString(sut.roll(6)));
+        // Arrange
+        Library sut = new Library(); int[] testArray = new int[3];
+        // Act
+        testArray = sut.roll(3);
+        // Assert
+        assertTrue(testArray.length == 3);
+        assertTrue(testArray[0] >= 1 && testArray[0] <= 6);
     }
     @Test void duplicateTest() {
         Library sut = new Library();
         int[] array = {2,4,6,2};
-        assertTrue(sut.containsDuplicates(array),"True or false?");
+        assertTrue(sut.containsDuplicates(array), "Array of {2, 4, 6, 2} asserts true, it contains a duplicate!");
     }
+    @Test void testCalculateArrayAverage(){
+        // ARRANGE
+        Library sut = new Library();
+        int[] testArray = {66, 64, 58, 65, 71, 57, 60};
+        // ACT
+        int result = sut.calculateAverage(testArray);
+        // ASSERT
+        assertNotNull(result);
+        assertEquals(0, (result * 0));
+    }
+    @Test void testAvgArray() {
+       Library sut = new Library();
+        // Calculating and asserting the arrays of arrays function but do not know.
+    }
+    @Test void testWeatherTemp() {
+        Library sut = new Library();
+        int[][] weeklyMonthTemperatures = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+        // Not sure what to assert
+    }
+    @Test void testTally() {
+        Library sut = new Library();
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+        String winner = tally(votes);
+        assert(winner.equals("Bush"));
+        System.out.println(winner + " received the most votes!");
+
+    }
+
+
+
 }
