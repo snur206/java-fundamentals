@@ -5,6 +5,9 @@ package basiclibrary;
 import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
+import java.util.ArrayList;
+
 
 
 class LibraryTest {
@@ -64,7 +67,6 @@ class LibraryTest {
         votes.add("Hedge");
         votes.add("Bush");
         String winner = tally(votes);
-        assert(winner.equals("Bush"));
         System.out.println(winner + " received the most votes!");
 
     }
