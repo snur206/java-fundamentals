@@ -3,12 +3,51 @@
  */
 package linter;
 
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public static void main(String[] args) throws IOException {
+        System.out.println("command line arguments: " + Arrays.toString(args));
+        System.out.println(System.getProperty("user.dir")); // shows what your relative directory is.
+//        lintFile("gates.js");
     }
-}
+
+    // Need a method to lint Files
+    public static void lintFile(String fileToBeRead) throws IOException {
+        // Get a Path
+        Path fileToBeLinted = Path.of(fileToBeRead);
+        int lineNumber = 0;
+        String errorMessage = "";
+        // Scanner
+        try(Scanner fileScanner = new Scanner(fileToBeLinted)){
+            // while file hasNextLine
+            while(fileScanner.hasNextLine()){
+                errorMessage = "";
+                // Grab ahold of the currentLine
+                String currentLine = fileScanner.nextLine();
+                lineNumber++;
+                // check for !endsWith(";")
+                if(!currentLine.endsWith(";")){
+                    // Check for other conditions
+                    if(currentLine.isEmpty() || currentLine.endsWith("{") || currentLine.endsWith("}") || currentLine.contains("if") || currentLine.contains("else")){
+                    } else {
+                        errorMessage += "Line: " + lineNumber + ": Missing semicolon.\n";
+                        System.out.println(errorMessage);
+
+                    }
+                    // if all false, sout out error message
+                }
+
+            }
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+
+    }
