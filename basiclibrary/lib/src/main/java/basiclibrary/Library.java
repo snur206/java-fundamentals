@@ -7,12 +7,10 @@ import java.util.Random;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-
 public class Library {
     public boolean someLibraryMethod() {
         return true;
     }
-
     // Rolling Dice
     public int[] roll(int n) {
         Random rand = new Random();
