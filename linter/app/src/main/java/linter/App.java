@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Scanner;
-
 public class App {
     public String getGreeting() {
         return "Hello World!";
