@@ -25,17 +25,17 @@ public class App {
         int lineNumber = 0;
         String errorMessage = "";
         // Scanner
-        try(Scanner fileScanner = new Scanner(fileToBeLinted)){
+        try (Scanner fileScanner = new Scanner(fileToBeLinted)) {
             // while file hasNextLine
-            while(fileScanner.hasNextLine()){
+            while (fileScanner.hasNextLine()) {
                 errorMessage = "";
                 // Grab ahold of the currentLine
                 String currentLine = fileScanner.nextLine();
                 lineNumber++;
                 // check for !endsWith(";")
-                if(!currentLine.endsWith(";")){
+                if (!currentLine.endsWith(";")) {
                     // Check for other conditions
-                    if(currentLine.isEmpty() || currentLine.endsWith("{") || currentLine.endsWith("}") || currentLine.contains("if") || currentLine.contains("else")){
+                    if (currentLine.isEmpty() || currentLine.endsWith("{") || currentLine.endsWith("}") || currentLine.contains("if") || currentLine.contains("else")) {
                     } else {
                         errorMessage += "Line: " + lineNumber + ": Missing semicolon.\n";
                         System.out.println(errorMessage);
@@ -50,3 +50,4 @@ public class App {
         }
 
     }
+}
