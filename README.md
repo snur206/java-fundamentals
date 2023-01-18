@@ -11,3 +11,7 @@ Added a test and method for roll dice and for the contains duplicates
 ## Lab 3:
 
 Worked the first two feature tasks using HashSet to collect the unique temp items, iterate from min to max temp, and create string that has any temp not seen during the month. Created a tally function for list of strings for votes and returns one string of the most votes.
+
+## Lab 6:
+
+Creating constructors for restaurants that take a name, number of stars between 0 and 5, and a price. Also, creating constructors for reviews that take a body(text), an author, and a number of stars.
