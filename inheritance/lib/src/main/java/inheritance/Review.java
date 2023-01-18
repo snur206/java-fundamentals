@@ -22,6 +22,7 @@ public class Review {
     public int getNumOfStars() {
         return numOfStars;
     }
+
     @Override
     public  String toString() {
         return "some text for body " + text + "By " + author + "star rating is " + numOfStars;
