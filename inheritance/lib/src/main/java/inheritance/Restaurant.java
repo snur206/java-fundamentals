@@ -5,16 +5,33 @@ import java.util.ArrayList;
 public class Restaurant {
     private String name;
     private String price;
-    private int numOfStars = 0;
-    private ArrayList<Review> reviews = new ArrayList<>();
+    private float numOfStars;
+    private ArrayList<Review> reviews;
 
-    public Restaurant(String name, String price, int numOfStars) {
+    public Restaurant(String name, String price) {
         this.name = name;
         this.price = price;
-        this.numOfStars = numOfStars;
-        this.reviews = reviews;
+        this.numOfStars = 0;
+        this.reviews = new ArrayList<>();
     }
 
+    // Methods
+    public void addReview(Review review){
+        int sumOfReviewStars = 0;
+        // 1. Add it to reviews List
+        reviews.add(review);
+        // 2. iterate over and get total sum of values
+        for (Review arrayReview: reviews) {
+            sumOfReviewStars += arrayReview.getNumOfStars();
+        }
+        // 3. calculate averageNum of stars
+        float averageNumOfStars = (sumOfReviewStars/reviews.size());
+        // 4. call setNumOfStars with new value
+        setNumOfStars(averageNumOfStars);
+    }
+
+
+    // GETTERS and SETTERS
     public String getName() {
         return name;
     }
@@ -31,11 +48,11 @@ public class Restaurant {
         this.price = price;
     }
 
-    public int getNumOfStars() {
+    public float getNumOfStars() {
         return numOfStars;
     }
 
-    public void setNumOfStars(int numOfStars) {
+    public void setNumOfStars(float numOfStars) {
         this.numOfStars = numOfStars;
     }
 
@@ -48,7 +65,7 @@ public class Restaurant {
     }
     @Override
     public  String toString() {
-        return "Restaurant " + name + "prices are " + price + "star rating is " + numOfStars;
+        return "Restaurant: " + name + "prices are " + price + "star rating is " + numOfStars;
     }
 
 }
