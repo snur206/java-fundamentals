@@ -14,6 +14,7 @@ class LibraryTest {
     @Test void testingAddReviewOnRestaurant(){
         // Arrange
         Review testReview = new Review("Good halal spot", "Sharmarke", 4);
+
         Restaurant testRestaurant = new Restaurant("Maza Grill", "$$");
         // Act
         testRestaurant.addReview(testReview);
@@ -55,5 +56,4 @@ class LibraryTest {
         assertTrue(testMovie.getReviews().contains(testReview));
         assertFalse(testMovie.getReviews().isEmpty());
     }
-
 }
