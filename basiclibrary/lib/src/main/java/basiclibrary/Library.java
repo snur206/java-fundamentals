@@ -7,10 +7,12 @@ import java.util.Random;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+
 public class Library {
     public boolean someLibraryMethod() {
         return true;
     }
+
     // Rolling Dice
     public int[] roll(int n) {
         Random rand = new Random();
@@ -24,10 +26,10 @@ public class Library {
 
     // Contains Duplicates
     public boolean containsDuplicates(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 1; j < array.length; j++) {
-                if (i == j) continue;
-                if (array[i] == array[j])
+        for(int i = 0; i < array.length; i++) {
+            for(int j = 1; j < array.length; j++) {
+                if(i == j) continue;
+                if(array[i] == array[j])
                     return true;
             }
         }
@@ -39,7 +41,7 @@ public class Library {
         int sum = 0;
         int arrayLength = arrayOfValues.length;
         // FOR LOOP
-        for (int i = 0; i < arrayOfValues.length; i++) {
+        for(int i = 0; i < arrayOfValues.length; i++) {
             // every iteration we add value to sum
             sum = sum + arrayOfValues[i];
         }
@@ -51,7 +53,7 @@ public class Library {
     public static int[] lowestAverageArray(int[][] weeklyMonthTemperatures){
         int[] lowestAverageArray = weeklyMonthTemperatures[0];
         int lowestAverage = calculateAverage(weeklyMonthTemperatures[0]);
-        for (int i = 0; i < weeklyMonthTemperatures.length; i++) {
+        for(int i = 0; i < weeklyMonthTemperatures.length; i++) {
             int currentArrayAverage = calculateAverage(weeklyMonthTemperatures[i]);
             if(currentArrayAverage < lowestAverage){
                 lowestAverageArray = weeklyMonthTemperatures[i];
@@ -66,8 +68,8 @@ public class Library {
         int highTemp = arr[0][0];
         int lowTemp = arr[0][0];
         HashSet<Integer> weatherData = new HashSet<>();
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
+        for(int i = 0; i < arr.length; i++) {
+            for(int j = 0; j < arr[i].length; j++) {
                 if (arr[i][j] > highTemp)
                     highTemp = arr[i][j];
                 if (arr[i][j] < lowTemp)
@@ -77,29 +79,29 @@ public class Library {
         }
         System.out.println("High: " + highTemp);
         System.out.println("Low: " + lowTemp);
-        for (int i = lowTemp; i < highTemp; i++) {
-            if (weatherData.contains(i))
+        for(int i = lowTemp; i < highTemp; i++) {
+            if(weatherData.contains(i))
                 result += i + " ";
             else System.out.println("Never saw temperature: " + i);
         }
         return result;
     }
-    public static String tally (List<String> arr) {
+    public static String tally(List<String> arr) {
 
         HashMap<String, Integer> votes = new HashMap<>();
         int numVotes = 0;
         String elected = "";
 
-        for (String vote : arr) {
-            if (votes.containsKey(vote)) {
+        for(String vote : arr) {
+            if(votes.containsKey(vote)) {
                 votes.put(vote, votes.get(vote) + 1);
 
             } else {
-                votes.put(vote, 0);
+                votes.put(vote, 1);
             }
-            for (String candidate : arr) {
-                if(votes.get(vote) > numVotes) {
-                    numVotes = votes.get(vote);
+            for(String candidate : arr) {
+                if(votes.get(candidate) > numVotes) {
+                    numVotes = votes.get(candidate);
                     elected = vote;
                 }
             }
