@@ -3,6 +3,11 @@
  */
 package inheritance;
 
+import inheritance.Business.Library;
+import inheritance.Business.Restaurant;
+import inheritance.Business.Shop;
+import inheritance.Business.Theater;
+import inheritance.BusinessReview.Review;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -49,7 +54,7 @@ class LibraryTest {
     @Test void testingAddReviewOnMovie(){
         // Arrange
         Review testReview = new Review("Legendary Movie", "Sharmarke", 5);
-         Theater testMovie = new Theater("Lion King");
+         Theater testMovie = new Theater("Lion King", 5);
         // Act
         testMovie.addReview(testReview);
         // Arrange

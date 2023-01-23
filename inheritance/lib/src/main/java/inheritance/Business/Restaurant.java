@@ -1,4 +1,6 @@
-package inheritance;
+package inheritance.Business;
+
+import inheritance.BusinessReview.Review;
 
 import java.util.ArrayList;
 

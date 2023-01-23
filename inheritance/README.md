@@ -18,5 +18,4 @@ Creating constructors for restaurants that take a name, number of stars between 
 
 ## Lab 7:
 
-Creating classes for Shops and theaters, adding reviews for them and for theaters, similar to lab 6. Also, adding and removing a movie. Using tests to see if the reviews are working properly by using assert true and false for both the shop and theater.
-
+Creating classes for Shops and theaters, adding reviews for them and for theaters, similar to lab 6. Also, adding and removing a movie. Using tests to see if the reviews are working properly by using assert true and false for both the shop and theater. 

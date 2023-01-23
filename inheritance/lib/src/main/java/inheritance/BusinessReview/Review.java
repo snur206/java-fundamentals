@@ -1,4 +1,4 @@
-package inheritance;
+package inheritance.BusinessReview;
 
 public class Review {
     private String text;
